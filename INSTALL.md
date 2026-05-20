@@ -136,3 +136,35 @@ You should see a notification indicating recording has started. Run it again to 
 ### Notifications don't appear
 - Ensure libnotify is installed
 - Check notify-send works: `notify-send "Test" "Notification"`
+
+## TUI Companion App (Optional)
+
+An optional TUI companion app is available for easier model management and performance tracking.
+
+### Install Dependencies
+
+```bash
+# Required
+pip install rich
+
+# Optional (for CPU statistics)
+pip install psutil
+```
+
+### Install TUI App
+
+```bash
+# Copy to bin directory
+cp whisper-tui.py ~/.local/bin/whisper-tui
+
+# Make executable
+chmod +x ~/.local/bin/whisper-tui
+```
+
+### Run TUI App
+
+```bash
+whisper-tui
+```
+
+See [TUI.md](TUI.md) for full documentation.

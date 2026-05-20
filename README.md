@@ -91,6 +91,25 @@ See [INSTALL.md](INSTALL.md) for detailed installation instructions.
 
 See [KEYBINDINGS.md](KEYBINDINGS.md) for keybinding configuration.
 
+## TUI Companion App (Optional)
+
+An optional TUI companion app is available for model management and performance tracking. See [TUI.md](TUI.md) for details.
+
+**Features:**
+- View and download Whisper models
+- Switch between installed models
+- View transcription statistics and CPU usage
+- System information display
+
+**Installation:**
+```bash
+pip install rich psutil
+cp whisper-tui.py ~/.local/bin/whisper-tui
+chmod +x ~/.local/bin/whisper-tui
+```
+
+Run with: `whisper-tui`
+
 ## License
 
 MIT License - see [LICENSE](LICENSE) for details.
