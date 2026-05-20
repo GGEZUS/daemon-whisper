@@ -110,7 +110,7 @@ class WhisperTUI:
         """Display application header"""
         header = "[bold cyan]daemon-whisper TUI[/bold cyan]"
         subtitle = "[dim]Optional companion for daemon-whisper[/dim]"
-        self.console.print(Panel(header + "\n" + subtitle, box.box.DOUBLE, style="cyan"))
+        self.console.print(Panel(header + "\n" + subtitle, box=box.DOUBLE, style="cyan"))
 
     def show_current_status(self):
         """Display current status panel"""
@@ -133,7 +133,7 @@ class WhisperTUI:
         # Installation status
         status_lines.append(f"\n[bold]Installed Models:[/bold] {len(self.installed_models)}/{len(self.config.models)}")
 
-        self.console.print(Panel("\n".join(status_lines), title="[bold]Status[/bold]", box.box.ROUNDED))
+        self.console.print(Panel("\n".join(status_lines), title="[bold]Status[/bold]", box=box.ROUNDED))
 
     def show_last_transcription(self):
         """Display last transcription info"""
@@ -147,13 +147,13 @@ class WhisperTUI:
                 f"[bold]CPU Usage:[/bold] {log.get('cpu_usage', 'N/A')}%",
                 f"[bold]Text:[/bold] {log.get('text', 'N/A')[:60]}...",
             ]
-            self.console.print(Panel("\n".join(lines), title="[bold]Last Transcription[/bold]", box.box.ROUNDED))
+            self.console.print(Panel("\n".join(lines), title="[bold]Last Transcription[/bold]", box=box.ROUNDED))
         else:
-            self.console.print(Panel("[dim]No transcriptions logged yet[/dim]", title="[bold]Last Transcription[/bold]", box.box.ROUNDED))
+            self.console.print(Panel("[dim]No transcriptions logged yet[/dim]", title="[bold]Last Transcription[/bold]", box=box.ROUNDED))
 
     def show_model_list(self):
         """Display all available models"""
-        table = Table(title="Available Models", box.box.ROUNDED)
+        table = Table(title="Available Models", box=box.ROUNDED)
         table.add_column("Model", style="cyan")
         table.add_column("Params", style="magenta")
         table.add_column("Size", style="green")
@@ -214,7 +214,7 @@ class WhisperTUI:
                 exists = "[green]✓[/green]" if subprocess.run(["which", tool], capture_output=True).returncode == 0 else "[red]✗[/red]"
             lines.append(f"  {exists} {tool}")
 
-        self.console.print(Panel("\n".join(lines), title="[bold]System Information[/bold]", box.box.ROUNDED))
+        self.console.print(Panel("\n".join(lines), title="[bold]System Information[/bold]", box=box.ROUNDED))
 
     def download_model(self, model_name: str):
         """Download a model using whisper.cpp's script"""
