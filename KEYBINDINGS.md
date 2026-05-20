@@ -8,7 +8,7 @@ Add this to your Niri config (`~/.config/niri/cfg/keybinds.kdl`):
 
 ```kdl
 // Speech-to-Text Keybinding
-Mod+V hotkey-overlay-title="Speech to Text" { spawn "/home/rbc/.local/bin/whisper-stt.sh"; }
+Mod+V hotkey-overlay-title="Speech to Text" { spawn "~/.local/bin/whisper-stt.sh"; }
 ```
 
 ### Alternative Keybindings
@@ -17,13 +17,13 @@ To change the keybinding, modify the hotkey:
 
 ```kdl
 // Example with different key
-Mod+Shift+V hotkey-overlay-title="Speech to Text" { spawn "/home/rbc/.local/bin/whisper-stt.sh"; }
+Mod+Shift+V hotkey-overlay-title="Speech to Text" { spawn "~/.local/bin/whisper-stt.sh"; }
 
 // Example with function key
-F13 hotkey-overlay-title="Speech to Text" { spawn "/home/rbc/.local/bin/whisper-stt.sh"; }
+F13 hotkey-overlay-title="Speech to Text" { spawn "~/.local/bin/whisper-stt.sh"; }
 
 // Example with Control key
-Ctrl+Alt+V hotkey-overlay-title="Speech to Text" { spawn "/home/rbc/.local/bin/whisper-stt.sh"; }
+Ctrl+Alt+V hotkey-overlay-title="Speech to Text" { spawn "~/.local/bin/whisper-stt.sh"; }
 ```
 
 After editing, reload Niri config:
@@ -57,14 +57,14 @@ bindsym $mod+V exec ~/.local/bin/whisper-stt.sh
 1. Open System Settings → Shortcuts → Custom Shortcuts
 2. Add new shortcut → Command/URL
 3. Set trigger to Meta+V
-4. Set command to `/home/rbc/.local/bin/whisper-stt.sh`
+4. Set command to `~/.local/bin/whisper-stt.sh`
 
 ### GNOME
 
 1. Open Settings → Keyboard → Keyboard Shortcuts
 2. Click "+" to add custom shortcut
 3. Name: "Speech to Text"
-4. Command: `/home/rbc/.local/bin/whisper-stt.sh`
+4. Command: `~/.local/bin/whisper-stt.sh`
 5. Shortcut: Set to Ctrl+Alt+V (or desired key)
 
 ## How to Use
