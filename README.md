@@ -2,7 +2,7 @@
 
 "When you whisper into the daemon, the daemon types back"
 
-Local speech-to-text transcription for Linux using Whisper models. Fully offline - your voice never leaves your machine.
+**CPU-only** local speech-to-text transcription for Linux using Whisper models. Fully offline - your voice never leaves your machine.
 
 ## Quick Summary
 
@@ -27,6 +27,16 @@ Local speech-to-text transcription for Linux using Whisper models. Fully offline
 - **Error handling:** Gracefully handles no-speech detection
 - **CPU-only:** No GPU required, works on any Linux system
 - **Fully offline:** Your voice data never leaves your machine
+
+## CPU-Only Operation
+
+This project is designed for **CPU-only operation** with no GPU acceleration. The build configuration explicitly disables Vulkan and GPU support:
+
+```bash
+cmake -DWHISPER_VULKAN=OFF ..
+```
+
+This ensures maximum compatibility and stability across all hardware configurations, including systems with Intel iGPUs or no dedicated GPU. Processing times listed below reflect CPU-only performance.
 
 ## Performance
 
