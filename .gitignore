@@ -1,0 +1,20 @@
+# Audio recordings
+*.wav
+*.mp3
+*.ogg
+
+# Temporary files
+/tmp/
+*.tmp
+*.pid
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
