@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Whisper TUI Companion App
+daemon-whisper TUI Companion App
 Optional companion for daemon-whisper - NOT required for core functionality
 """
 
@@ -108,7 +108,7 @@ class WhisperTUI:
 
     def show_header(self):
         """Display application header"""
-        header = "[bold cyan]Whisper TUI Companion[/bold cyan]"
+        header = "[bold cyan]daemon-whisper TUI[/bold cyan]"
         subtitle = "[dim]Optional companion for daemon-whisper[/dim]"
         self.console.print(Panel(header + "\n" + subtitle, box.box.DOUBLE, style="cyan"))
 
