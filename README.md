@@ -49,11 +49,22 @@ This ensures maximum compatibility and stability across all hardware configurati
 
 ## System Requirements
 
-- Linux with PipeWire/PulseAudio
-- Bash shell
-- wtype (for auto-typing)
-- libnotify (for notifications)
-- cmake and build tools
+- **Linux OS** with PipeWire or PulseAudio
+- **Window Manager** (Niri, Hyprland, i3, Sway, etc.) or Desktop Environment (KDE, GNOME)
+- **Dependencies:**
+  - `bash` - Shell interpreter
+  - `cmake` + build tools - For building whisper.cpp
+  - `ffmpeg` - Audio processing
+  - `alsa-utils` - Provides `arecord` for audio recording
+  - `wtype` - Auto-typing at cursor (Wayland)
+  - `libnotify` - Desktop notifications
+- **~500MB disk space** - For whisper.cpp and small.en model
+
+## Limitations
+
+- **English-only:** Transcription is hardcoded for English language
+- **Wayland-focused:** Uses `wtype` for auto-typing (Wayland). For X11, replace with `xdotool`
+- **CPU-only:** No GPU acceleration (by design for stability)
 
 ## Installation
 

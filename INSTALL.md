@@ -2,22 +2,29 @@
 
 ## Dependencies
 
+**Required packages for all distros:**
+- `cmake` + build tools - Build whisper.cpp
+- `ffmpeg` - Audio processing
+- `alsa-utils` - Audio recording via arecord
+- `wtype` - Auto-typing (Wayland)
+- `libnotify` - Desktop notifications
+
 ### Arch Linux / Arch-based distributions
 
 ```bash
-sudo pacman -S cmake base-devel ffmpeg wtype libnotify
+sudo pacman -S cmake base-devel ffmpeg alsa-utils wtype libnotify
 ```
 
 ### Debian / Ubuntu
 
 ```bash
-sudo apt install cmake build-essential ffmpeg wtype libnotify-bin
+sudo apt install cmake build-essential ffmpeg alsa-utils wtype libnotify-bin
 ```
 
 ### Fedora
 
 ```bash
-sudo dnf install cmake gcc-c++ ffmpeg wtype libnotify
+sudo dnf install cmake gcc-c++ ffmpeg alsa-utils wtype libnotify
 ```
 
 ## Building whisper.cpp
