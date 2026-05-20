@@ -40,12 +40,25 @@ This ensures maximum compatibility and stability across all hardware configurati
 
 ## Performance
 
-| Model | Size | Processing Time | Accuracy |
-|-------|------|-----------------|----------|
-| tiny.en | 78MB | ~1s | Basic |
-| base.en | 148MB | ~1-2s | Good |
-| small.en | 466MB | ~2-3s | Very Good |
-| medium.en | 1.5GB | ~5-10s | Excellent |
+| Model | Parameters | Size | Speed | Accuracy |
+|-------|-----------|------|-------|----------|
+| tiny.en | 39M | 78MB | ~10x | Basic |
+| base.en | 74M | 148MB | ~7x | Good |
+| small.en | 244M | 466MB | ~4x | Very Good |
+| medium.en | 769M | 1.5GB | ~2x | Excellent |
+| large | 1550M | 3GB | 1x | Best (multilingual) |
+| turbo | 809M | 1.6GB | ~8x | Excellent (optimized) |
+
+**Note:** The .en models are English-only and perform better than multilingual models for English. The turbo model is an optimized version of large-v3 with faster speed and minimal accuracy degradation.
+
+### Model Comparison
+
+- **tiny.en** - Fastest, basic accuracy (~78MB)
+- **base.en** - Fast, good accuracy (~148MB)
+- **small.en** - Balanced, very good accuracy (~466MB) [recommended]
+- **medium.en** - Slower, excellent accuracy (~1.5GB)
+- **large** - Slowest, best accuracy, multilingual (~3GB)
+- **turbo** - Fast (like base), excellent accuracy (~1.6GB)
 
 ## System Requirements
 

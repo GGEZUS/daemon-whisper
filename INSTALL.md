@@ -52,11 +52,25 @@ cd ~/whisper.cpp
 ./models/download-ggml-model.sh small.en
 ```
 
-Available models:
-- `tiny.en` (78MB) - Fastest, basic accuracy
-- `base.en` (148MB) - Fast, good accuracy
-- `small.en` (466MB) - Balanced, very good accuracy (recommended)
-- `medium.en` (1.5GB) - Slower, excellent accuracy
+### Available Models
+
+| Model | Parameters | Size | Speed | Description |
+|-------|-----------|------|-------|-------------|
+| **English-only models** |
+| tiny.en | 39M | 78MB | ~10x | Fastest, basic accuracy |
+| base.en | 74M | 148MB | ~7x | Fast, good accuracy |
+| small.en | 244M | 466MB | ~4x | Balanced, very good accuracy (recommended) |
+| medium.en | 769M | 1.5GB | ~2x | Slower, excellent accuracy |
+| **Multilingual models** |
+| tiny | 39M | 78MB | ~10x | Fastest, supports all languages |
+| base | 74M | 148MB | ~7x | Fast, supports all languages |
+| small | 244M | 466MB | ~4x | Balanced, supports all languages |
+| medium | 769M | 1.5GB | ~2x | Slower, supports all languages |
+| large | 1550M | 3GB | 1x | Best accuracy, multilingual |
+| **Optimized model** |
+| turbo | 809M | 1.6GB | ~8x | Fast + excellent accuracy (optimized large-v3) |
+
+**Recommendation:** Use English-only models (.en) for English transcription - they perform better than multilingual models. The `turbo` model offers the best speed/accuracy tradeoff if you have ~1.6GB to spare.
 
 ## Install Script
 
