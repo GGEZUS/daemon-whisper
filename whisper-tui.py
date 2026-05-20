@@ -62,7 +62,8 @@ class WhisperTUI:
     """Main TUI application"""
 
     def __init__(self):
-        self.console = Console()
+        # Set console width to reasonable size (80 columns)
+        self.console = Console(width=80)
         self.config = WhisperConfig()
         self.current_model = self._get_current_model()
         self.installed_models = self._get_installed_models()
