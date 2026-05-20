@@ -54,23 +54,22 @@ cd ~/whisper.cpp
 
 ### Available Models
 
-| Model | Parameters | Size | Speed | Description |
-|-------|-----------|------|-------|-------------|
-| **English-only models** |
-| tiny.en | 39M | 78MB | ~10x | Fastest, basic accuracy |
-| base.en | 74M | 148MB | ~7x | Fast, good accuracy |
-| small.en | 244M | 466MB | ~4x | Balanced, very good accuracy (recommended) |
-| medium.en | 769M | 1.5GB | ~2x | Slower, excellent accuracy |
-| **Multilingual models** |
-| tiny | 39M | 78MB | ~10x | Fastest, supports all languages |
-| base | 74M | 148MB | ~7x | Fast, supports all languages |
-| small | 244M | 466MB | ~4x | Balanced, supports all languages |
-| medium | 769M | 1.5GB | ~2x | Slower, supports all languages |
-| large | 1550M | 3GB | 1x | Best accuracy, multilingual |
-| **Optimized model** |
-| turbo | 809M | 1.6GB | ~8x | Fast + excellent accuracy (optimized large-v3) |
+| Size | Parameters | English-only | Multilingual | Required VRAM | Relative Speed |
+|-------|-----------|--------------|--------------|---------------|----------------|
+| tiny | 39 M | tiny.en | tiny | ~1 GB | ~10x |
+| base | 74 M | base.en | base | ~1 GB | ~7x |
+| small | 244 M | small.en | small | ~2 GB | ~4x |
+| medium | 769 M | medium.en | medium | ~5 GB | ~2x |
+| large | 1550 M | N/A | large | ~10 GB | 1x |
+| turbo | 809 M | N/A | turbo | ~6 GB | ~8x |
 
-**Recommendation:** Use English-only models (.en) for English transcription - they perform better than multilingual models. The `turbo` model offers the best speed/accuracy tradeoff if you have ~1.6GB to spare.
+**Model Selection Notes:**
+- The **.en models** (English-only) perform better than multilingual models for English transcription
+- The difference is most significant for `tiny.en` and `base.en`, less significant for `small.en` and `medium.en`
+- The **turbo** model is an optimized version of large-v3 offering faster transcription with minimal accuracy degradation
+- Processing times reflect CPU-only performance (slower than GPU benchmarks)
+
+**Recommendation:** Use English-only models (.en) for English transcription. The `turbo` model offers the best speed/accuracy tradeoff if you have ~1.6GB to spare.
 
 ## Install Script
 

@@ -40,25 +40,29 @@ This ensures maximum compatibility and stability across all hardware configurati
 
 ## Performance
 
-| Model | Parameters | Size | Speed | Accuracy |
-|-------|-----------|------|-------|----------|
-| tiny.en | 39M | 78MB | ~10x | Basic |
-| base.en | 74M | 148MB | ~7x | Good |
-| small.en | 244M | 466MB | ~4x | Very Good |
-| medium.en | 769M | 1.5GB | ~2x | Excellent |
-| large | 1550M | 3GB | 1x | Best (multilingual) |
-| turbo | 809M | 1.6GB | ~8x | Excellent (optimized) |
+| Size | Parameters | English-only | Multilingual | Required VRAM | Relative Speed |
+|-------|-----------|--------------|--------------|---------------|----------------|
+| tiny | 39 M | tiny.en | tiny | ~1 GB | ~10x |
+| base | 74 M | base.en | base | ~1 GB | ~7x |
+| small | 244 M | small.en | small | ~2 GB | ~4x |
+| medium | 769 M | medium.en | medium | ~5 GB | ~2x |
+| large | 1550 M | N/A | large | ~10 GB | 1x |
+| turbo | 809 M | N/A | turbo | ~6 GB | ~8x |
 
-**Note:** The .en models are English-only and perform better than multilingual models for English. The turbo model is an optimized version of large-v3 with faster speed and minimal accuracy degradation.
+**Model Selection Notes:**
+- The **.en models** (English-only) perform better than multilingual models for English transcription
+- The difference is most significant for `tiny.en` and `base.en`, less significant for `small.en` and `medium.en`
+- The **turbo** model is an optimized version of large-v3 offering faster transcription with minimal accuracy degradation
+- Processing times reflect CPU-only performance (slower than GPU benchmarks)
 
-### Model Comparison
+### Recommended Models
 
-- **tiny.en** - Fastest, basic accuracy (~78MB)
-- **base.en** - Fast, good accuracy (~148MB)
-- **small.en** - Balanced, very good accuracy (~466MB) [recommended]
-- **medium.en** - Slower, excellent accuracy (~1.5GB)
-- **large** - Slowest, best accuracy, multilingual (~3GB)
-- **turbo** - Fast (like base), excellent accuracy (~1.6GB)
+- **tiny.en** (~78MB) - Fastest, basic accuracy
+- **base.en** (~148MB) - Fast, good accuracy
+- **small.en** (~466MB) - Balanced, very good accuracy [recommended for most users]
+- **medium.en** (~1.5GB) - Slower, excellent accuracy
+- **large** (~3GB) - Best accuracy, multilingual support
+- **turbo** (~1.6GB) - Fast + excellent accuracy (optimized large-v3)
 
 ## System Requirements
 
